@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#DIST_DEFINE="--define \"dist `rpm --eval '%{dist}' | sed s/fc/local/`\""
+
+rpmbuild --define "_sourcedir $PWD" --define "_specdir $PWD" --define "_srcrpmdir $PWD" --define "_rpmdir $PWD" $DIST_DEFINE "$@"
